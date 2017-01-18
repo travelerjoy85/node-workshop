@@ -1,0 +1,23 @@
+{
+  "name": "node-workshop",
+  "version": "1.0.0",
+  "description": "### Base instructions   * Fork this repository and clone it in a new Cloud9 workspace.   * As you open the project in Cloud9, open notice there is a file called `.gitignore`. Open this file to check its contents.   * Notice that the `.gitignore` file contains one line that says \"`node_modules`\". What this is doing is telling Git that it should ignore the contents of the `node_modules` directory. Since the code in there comes from the outside world, we don't need to save it in our repo.   * **All the code of this workshop will go in master**. After your first commit, push and create a pull-request. Then, create a pull-request after each exercise.",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DecodeMTL/node-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DecodeMTL/node-workshop/issues"
+  },
+  "homepage": "https://github.com/DecodeMTL/node-workshop#readme",
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "request": "^2.79.0"
+  }
+}
