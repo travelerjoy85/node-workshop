@@ -4,15 +4,16 @@
   * Fork this repository and clone it in a new Cloud9 workspace.
   * As you open the project in Cloud9, open notice there is a file called `.gitignore`. Open this file to check its contents.
   * Notice that the `.gitignore` file contains one line that says "`node_modules`". What this is doing is telling Git that it should ignore the contents of the `node_modules` directory. Since the code in there comes from the outside world, we don't need to save it in our repo.
-  * **All the code of this workshop will go in master**. After your first commit, push and create a pull-request. Then, create a pull-request after each exercise.
+  * **All the code of this workshop will go in master**. After your first commit, push and create a pull-request titled "Nodes basic workshop - _yourName_".
+  * After each exercise, commit your changes and push.
 
 ### First program
-  * Create a file called `hello-world.js` . In it, write a simple node program that outputs "`Hello World!`" to the console.
+  * Create a file called `hello-world.js`. In it, write a simple node program that outputs "`Hello World!`" to the console.
   * Add an instruction to your program that will output "`Hello World Again!!`" 10 seconds after the program was run.
   * Save, commit and push.
 
 ### A wild interval has appeared!
-If you never tried `setInterval`, give it a try first. It works the same way as `setTimeout`, takes a callback function and a time in milliseconds. But instead of calling your callback once, it calls it **once every x milliseconds**. In this exercise, you'll have to mimic what setInterval is doing but **only with `setTimeout`**!
+If you never tried `setInterval`, give it a try first. Like `setTimeout`, it takes a callback function and a time in milliseconds. But instead of calling your callback once, it calls it **once every x milliseconds**. In this exercise, you'll have to mimic what setInterval is doing but **only with `setTimeout`**!
 
 Your exercise: Write a piece of code using `setTimeout` that prints "Hello World!" every 10 seconds forever.
 
@@ -42,13 +43,13 @@ while (true) {
 Up to you to figure out why this does not work ;) Ask us if you can't figure it out. Then, find a real solution.
 
 **Two BIG hints**: the solution involves recursion. You will have to write a function.
-  
+
 ### Getting some data
   * Create a file called `iss.js`. In it, write a simple node program that will output the latitude and longitude of the International Space Station.
   * Practice your [google-fu](http://www.urbandictionary.com/define.php?term=google-fu) by searching for "iss api" and figuring out the correct URL to use. *Hint: there are many options and they are all good :)*
   * Notice that the values provided by the API are very precise. Round off the values to two decimal digits for a nicer display. *Hint: toFixed*
   * Save/commit/push
-  
+
 ### Augmenting our application
   * Create a file called `iss-augmented.js`. It will be similar to `iss.js` but more difficult!
   * Augment your ISS application to tell the user how "far" the ISS is from them. Here is how you will do it:
@@ -65,15 +66,17 @@ Up to you to figure out why this does not work ;) Ask us if you can't figure it 
     return this * Math.PI / 180;
   }
 ```
-  * Finally, display a message to the user telling them what their "distance" to the ISS is.
+  * Be aware that _toFixed()_ will convert your number to a string, which may or may not be a problem. Read more about his [here](http://stackoverflow.com/questions/2283566/how-can-i-round-a-number-in-javascript-tofixed-returns-a-string) to learn how to convert back to a number or do rounding differently.
+  * Finally, display a message which says something like "_The ISS is XXXXXX kilometers away from you._".
   * Save/commit/push
-  
+
 ### Number guessing game!
   * Create a file called `number-guessing-game.js`.
   * In this file, re-write your number guessing game (from the basic javascript workshop) for the command line!
   * Instead of using `prompt` and `alert`, you will have to use capabilities from NodeJS and any external module. **HINT**: there is an npm library called `prompt` that can help you with that :)
+  * Reminder: to install an npm library, run `npm install theLibraryName`. In this case theLibraryName is `prompt`.s
   * Save/commit/push
-  
+
 ### Challenge: Hangman!
   * Create a file called `hangman.js`.
   * In this file, write a program that will let the user play hangman. The program should work as follows:
