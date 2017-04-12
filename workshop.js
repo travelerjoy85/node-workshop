@@ -58,7 +58,14 @@ function getCurrentTemperature(address) {
 }
 
 function getDistanceFromIss(address) {
-
+    return Promise.all([
+            getIssPosition(),
+            getAddressPosition(address)
+        ]).then(function(distance){
+            return getDistance(distance[0], distance[1]);
+        }).catch(function(error){
+            console.log('Go home!');
+        })
 }
 
 exports.getIssPosition = getIssPosition;
