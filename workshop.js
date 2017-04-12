@@ -24,15 +24,37 @@ getIssPosition().then(function(pos){
 });
 
 function getAddressPosition(address) {
-
+    return request('https://maps.googleapis.com/maps/api/geocode/json?address=montreal')
+    .then(function(response){
+        var data = JSON.parse(response);
+        var newObj = {
+          lat: data.results[0].geometry.location.lat,
+          lng: data.results[0].geometry.location.lng
+        };
+        return newObj;
+    })
 }
+getAddressPosition().then(function(pos){
+    console.log('The location is', pos);
+}).catch(function(error){
+    console.log('OOPS, time to go home');
+});
 
 function getCurrentTemperatureAtPosition(position) {
-
+    return request('https://api.darksky.net/forecast/12056de9b1e199c9ecd80b6faabcc09e/37.8267,-122.4233')
+    .then(function(response){
+        var data = JSON.parse(response);
+        return data.currently.temperature;
+    })
 }
+getCurrentTemperatureAtPosition().then(function(pos){
+    console.log('The temperature of current position is', pos);
+}).catch(function(error){
+    console.log('Time to go home.');
+})
 
 function getCurrentTemperature(address) {
-
+   return getCurrentTemperatureAtPosition(getAddressPosition(address));
 }
 
 function getDistanceFromIss(address) {
